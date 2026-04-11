@@ -1,0 +1,529 @@
+<!doctype html>
+
+<html class="light" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>CRAWLBOY | Quick Start &amp; Documentation</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link
+            crossorigin=""
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "surface-tint": "#006e16",
+                            "on-surface": "#1c1b1b",
+                            "on-secondary-fixed-variant": "#474646",
+                            "inverse-surface": "#313030",
+                            "surface-container-high": "#ebe7e7",
+                            "on-tertiary": "#ffffff",
+                            "on-surface-variant": "#3b4b37",
+                            primary: "#006e16",
+                            "on-secondary-container": "#656464",
+                            surface: "#fcf9f8",
+                            "primary-container": "#00ff41",
+                            "on-background": "#1c1b1b",
+                            "on-tertiary-container": "#606060",
+                            "surface-container-low": "#f6f3f2",
+                            "on-primary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            error: "#ba1a1a",
+                            "surface-container-lowest": "#ffffff",
+                            secondary: "#5f5e5e",
+                            "on-primary-fixed-variant": "#00530e",
+                            tertiary: "#5e5e5e",
+                            "tertiary-fixed-dim": "#c6c6c6",
+                            "error-container": "#ffdad6",
+                            "secondary-container": "#e5e2e1",
+                            "surface-container-highest": "#e5e2e1",
+                            "surface-bright": "#fcf9f8",
+                            "on-secondary": "#ffffff",
+                            "on-primary-fixed": "#002203",
+                            "inverse-on-surface": "#f3f0ef",
+                            "tertiary-fixed": "#e2e2e2",
+                            "on-primary-container": "#007117",
+                            "on-secondary-fixed": "#1c1b1b",
+                            "secondary-fixed": "#e5e2e1",
+                            background: "#fcf9f8",
+                            "surface-variant": "#e5e2e1",
+                            outline: "#6b7c65",
+                            "surface-container": "#f0edec",
+                            "on-error": "#ffffff",
+                            "inverse-primary": "#00e639",
+                            "secondary-fixed-dim": "#c8c6c5",
+                            "on-tertiary-fixed": "#1b1b1b",
+                            "on-tertiary-fixed-variant": "#474747",
+                            "primary-fixed": "#72ff70",
+                            "primary-fixed-dim": "#00e639",
+                            "surface-dim": "#dcd9d9",
+                            "tertiary-container": "#dcdcdc",
+                            "outline-variant": "#b9ccb2",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                        fontFamily: {
+                            headline: ["Space Grotesk"],
+                            body: ["Inter"],
+                            label: ["Space Grotesk"],
+                            mono: ["JetBrains Mono"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 400,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+            body {
+                font-family: "Inter", sans-serif;
+            }
+            h1,
+            h2,
+            h3 {
+                font-family: "Space Grotesk", sans-serif;
+            }
+            code,
+            pre {
+                font-family: "JetBrains Mono", monospace;
+            }
+            .glass-nav {
+                background: rgba(252, 249, 248, 0.8);
+                backdrop-filter: blur(24px);
+            }
+            .terminal-glow {
+                background: linear-gradient(135deg, #006e16 0%, #00e639 100%);
+            }
+        </style>
+    </head>
+    <body
+        class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container"
+    >
+        <!-- TopNavBar -->
+        <nav
+            class="fixed top-0 w-full z-50 bg-[#fcf9f8]/80 dark:bg-[#313030]/80 backdrop-blur-md"
+        >
+            <div
+                class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto"
+            >
+                <div
+                    class="text-xl font-bold tracking-tighter text-[#313030] dark:text-[#fcf9f8] font-['Space_Grotesk']"
+                >
+                    CRAWLBOY
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a
+                        class="text-[#313030] dark:text-[#fcf9f8] opacity-70 hover:opacity-100 transition-opacity duration-200"
+                        href="#"
+                        >Features</a
+                    >
+                    <a
+                        class="text-[#006e16] dark:text-[#00ff41] font-bold border-b-2 border-[#00ff41] pb-1 hover:opacity-100 transition-opacity duration-200"
+                        href="#"
+                        >Quick Start</a
+                    >
+                    <a
+                        class="text-[#313030] dark:text-[#fcf9f8] opacity-70 hover:opacity-100 transition-opacity duration-200"
+                        href="#"
+                        >Docs</a
+                    >
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="material-symbols-outlined text-[#313030] dark:text-[#fcf9f8] opacity-70"
+                    >
+                        terminal
+                    </button>
+                    <button
+                        class="terminal-glow text-on-primary px-5 py-2 font-bold tracking-tight rounded-sm active:scale-95 duration-150"
+                    >
+                        Install
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <main class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
+            <!-- Hero Header -->
+            <header
+                class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
+            >
+                <div class="max-w-2xl">
+                    <h1
+                        class="text-display-lg font-bold tracking-tighter text-7xl mb-6 text-on-surface"
+                    >
+                        Kinetic
+                        <span class="text-primary italic">Terminal</span> Core.
+                    </h1>
+                    <p
+                        class="text-xl text-on-surface-variant leading-relaxed font-body max-w-xl"
+                    >
+                        High-performance web crawling for Python developers who
+                        value speed, precision, and the clean aesthetics of the
+                        command line.
+                    </p>
+                </div>
+                <div
+                    class="flex flex-col items-start md:items-end gap-2 font-mono text-xs uppercase tracking-widest text-primary"
+                >
+                    <span>Status: Stable 2.4.0</span>
+                    <span>Latency: 14ms</span>
+                </div>
+            </header>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <!-- Sidebar Navigation (Desktop) -->
+                <aside
+                    class="hidden lg:block lg:col-span-3 sticky top-40 h-fit space-y-8"
+                >
+                    <div>
+                        <h3
+                            class="font-mono text-xs uppercase tracking-widest text-secondary mb-4"
+                        >
+                            On this page
+                        </h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <a
+                                    class="text-on-surface font-medium border-l-2 border-primary-container pl-4"
+                                    href="#installation"
+                                    >Installation</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="text-on-surface-variant hover:text-primary pl-4 border-l-2 border-transparent transition-colors"
+                                    href="#usage"
+                                    >Basic Usage</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="text-on-surface-variant hover:text-primary pl-4 border-l-2 border-transparent transition-colors"
+                                    href="#cli"
+                                    >CLI Commands</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <!-- Content Area -->
+                <div class="lg:col-span-9 space-y-32">
+                    <!-- Installation Section -->
+                    <section class="relative" id="installation">
+                        <div class="flex items-center gap-4 mb-8">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl"
+                                >download_for_offline</span
+                            >
+                            <h2 class="text-4xl font-bold tracking-tight">
+                                Installation
+                            </h2>
+                        </div>
+                        <p
+                            class="text-body-lg text-on-surface-variant mb-8 max-w-2xl"
+                        >
+                            Get started by installing the core package via PyPI.
+                            We recommend using a virtual environment to manage
+                            your dependencies.
+                        </p>
+                        <!-- Terminal Window -->
+                        <div
+                            class="bg-inverse-surface rounded-lg overflow-hidden shadow-2xl"
+                        >
+                            <div
+                                class="bg-[#3b3a3a] px-4 py-2 flex items-center justify-between"
+                            >
+                                <span
+                                    class="font-mono text-[10px] text-surface-container-highest uppercase tracking-widest"
+                                    >shell — python-env</span
+                                >
+                                <span
+                                    class="material-symbols-outlined text-surface-container-highest text-sm"
+                                    >content_copy</span
+                                >
+                            </div>
+                            <div class="p-6 font-mono text-lg">
+                                <div class="flex gap-4">
+                                    <span
+                                        class="text-primary-container opacity-50"
+                                        >$</span
+                                    >
+                                    <span class="text-primary-container"
+                                        >pip install
+                                        <span class="text-surface"
+                                            >crawlboy</span
+                                        ></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Basic Usage Section -->
+                    <section class="relative" id="usage">
+                        <div class="flex items-center gap-4 mb-8">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl"
+                                >code</span
+                            >
+                            <h2 class="text-4xl font-bold tracking-tight">
+                                Basic Usage
+                            </h2>
+                        </div>
+                        <p
+                            class="text-body-lg text-on-surface-variant mb-8 max-w-2xl"
+                        >
+                            Crawlboy provides a declarative API for defining
+                            your scraping logic. Import the crawler, define your
+                            target, and start the engine.
+                        </p>
+                        <div
+                            class="bg-inverse-surface rounded-lg overflow-hidden"
+                        >
+                            <div class="bg-[#3b3a3a] px-4 py-2">
+                                <span
+                                    class="font-mono text-[10px] text-surface-container-highest uppercase tracking-widest"
+                                    >main.py</span
+                                >
+                            </div>
+                            <pre
+                                class="p-8 text-sm md:text-base leading-relaxed overflow-x-auto"
+                            ><code class="text-surface">
+<span class="text-primary-container">from</span> crawlboy <span class="text-primary-container">import</span> Crawler
+
+<span class="text-on-secondary-container"># Initialize the kinetic engine</span>
+bot = Crawler(
+    base_url=<span class="text-primary-fixed">"https://example.com"</span>,
+    depth=<span class="text-primary-fixed">2</span>,
+    concurrency=<span class="text-primary-fixed">10</span>
+)
+
+<span class="text-primary-container">@bot.on_found</span>
+<span class="text-primary-container">def</span> <span class="text-primary-fixed">handle_data</span>(url, content):
+    <span class="text-primary-container">print</span>(f<span class="text-primary-fixed">"Discovered: {url}"</span>)
+
+<span class="text-on-secondary-container"># Ignite the crawl</span>
+bot.ignite()</code></pre>
+                        </div>
+                    </section>
+                    <!-- CLI Commands Section -->
+                    <section class="relative" id="cli">
+                        <div class="flex items-center gap-4 mb-8">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl"
+                                >terminal</span
+                            >
+                            <h2 class="text-4xl font-bold tracking-tight">
+                                CLI Commands
+                            </h2>
+                        </div>
+                        <p
+                            class="text-body-lg text-on-surface-variant mb-8 max-w-2xl"
+                        >
+                            Prefer the terminal? Crawlboy ships with a powerful
+                            CLI for rapid prototyping and quick site audits
+                            without writing a single line of Python.
+                        </p>
+                        <!-- Custom Table without borders -->
+                        <div
+                            class="bg-surface-container-low overflow-hidden rounded-xl"
+                        >
+                            <div
+                                class="grid grid-cols-3 p-6 font-mono text-[10px] uppercase tracking-widest text-secondary opacity-70"
+                            >
+                                <div>Flag</div>
+                                <div>Argument</div>
+                                <div>Function</div>
+                            </div>
+                            <div class="space-y-1">
+                                <div
+                                    class="grid grid-cols-3 p-6 bg-surface-container-lowest hover:bg-primary-container/10 transition-colors"
+                                >
+                                    <div
+                                        class="font-mono text-primary font-bold"
+                                    >
+                                        --recursive
+                                    </div>
+                                    <div
+                                        class="font-mono text-on-surface-variant italic"
+                                    >
+                                        bool
+                                    </div>
+                                    <div class="text-sm">
+                                        Traverse nested links automatically.
+                                    </div>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 p-6 bg-surface-container-low hover:bg-primary-container/10 transition-colors"
+                                >
+                                    <div
+                                        class="font-mono text-primary font-bold"
+                                    >
+                                        --depth
+                                    </div>
+                                    <div
+                                        class="font-mono text-on-surface-variant italic"
+                                    >
+                                        int
+                                    </div>
+                                    <div class="text-sm">
+                                        Maximum crawl distance from source.
+                                    </div>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 p-6 bg-surface-container-lowest hover:bg-primary-container/10 transition-colors"
+                                >
+                                    <div
+                                        class="font-mono text-primary font-bold"
+                                    >
+                                        --output
+                                    </div>
+                                    <div
+                                        class="font-mono text-on-surface-variant italic"
+                                    >
+                                        path
+                                    </div>
+                                    <div class="text-sm">
+                                        Save results to JSON or CSV format.
+                                    </div>
+                                </div>
+                                <div
+                                    class="grid grid-cols-3 p-6 bg-surface-container-low hover:bg-primary-container/10 transition-colors"
+                                >
+                                    <div
+                                        class="font-mono text-primary font-bold"
+                                    >
+                                        --delay
+                                    </div>
+                                    <div
+                                        class="font-mono text-on-surface-variant italic"
+                                    >
+                                        float
+                                    </div>
+                                    <div class="text-sm">
+                                        Politeness delay between requests.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Visual Accent: Bento Promo -->
+                    <section
+                        class="grid grid-cols-1 md:grid-cols-2 gap-8 py-12"
+                    >
+                        <div
+                            class="bg-surface-container-highest p-12 rounded-2xl flex flex-col justify-between aspect-square md:aspect-auto"
+                        >
+                            <h3 class="text-4xl font-bold tracking-tight">
+                                Built for speed.
+                            </h3>
+                            <div class="space-y-4">
+                                <div
+                                    class="h-2 w-full bg-surface/50 rounded-full overflow-hidden"
+                                >
+                                    <div class="h-full bg-primary w-4/5"></div>
+                                </div>
+                                <p
+                                    class="font-mono text-xs uppercase tracking-widest opacity-60"
+                                >
+                                    Engine Load: 82% Efficiency
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="relative overflow-hidden rounded-2xl aspect-square md:aspect-auto min-h-[300px]"
+                        >
+                            <img
+                                alt="Digital core"
+                                class="absolute inset-0 w-full h-full object-cover grayscale"
+                                data-alt="abstract close-up of futuristic green circuit board with glowing light traces and tech minimalist aesthetic"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2vcaKMTSkNo7n_PXK3-11UYMCJrNqtsIA8nFc1TXKVTUDX6aYWvZ-uMpUTxH5t0d67-JuY3cNSWIGlozOEGrfWohfxfS5Jx5Ubc7Dz0RgnrmCnlLci7AcCYqzSSzYyP96FidvSzFmzJCbaevR8bdDrkY0llKBYhkC1elEEuV66eG70TRbfm0r2Lig0UHuBTkrlu3BnVcTVZuvtQ9cKTR9MndPkg43QTkZjLUoNBjhTwg93j4bhA7Mdn4L2MaeAxBuRCLvS6tSVJ0"
+                            />
+                            <div
+                                class="absolute inset-0 bg-primary/20 mix-blend-multiply"
+                            ></div>
+                            <div
+                                class="absolute inset-0 p-12 flex flex-col justify-end text-surface"
+                            >
+                                <p
+                                    class="font-mono text-[10px] uppercase tracking-widest mb-2"
+                                >
+                                    Internal Architecture
+                                </p>
+                                <p class="text-2xl font-bold">
+                                    Async/IO Core for Maximum Throughput.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="w-full py-12 mt-24 bg-[#f6f3f2] dark:bg-[#313030]">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto space-y-4 md:space-y-0"
+            >
+                <div
+                    class="font-bold text-[#313030] dark:text-[#fcf9f8] font-['Space_Grotesk'] text-lg"
+                >
+                    CRAWLBOY
+                </div>
+                <div
+                    class="flex flex-wrap justify-center gap-8 font-mono text-xs uppercase tracking-widest"
+                >
+                    <a
+                        class="text-[#313030] dark:text-[#fcf9f8] opacity-50 hover:text-[#006e16] dark:hover:text-[#00ff41] transition-colors"
+                        href="#"
+                        >GitHub</a
+                    >
+                    <a
+                        class="text-[#00ff41] underline underline-offset-4"
+                        href="#"
+                        >Documentation</a
+                    >
+                    <a
+                        class="text-[#313030] dark:text-[#fcf9f8] opacity-50 hover:text-[#006e16] dark:hover:text-[#00ff41] transition-colors"
+                        href="#"
+                        >PyPI</a
+                    >
+                    <a
+                        class="text-[#313030] dark:text-[#fcf9f8] opacity-50 hover:text-[#006e16] dark:hover:text-[#00ff41] transition-colors"
+                        href="#"
+                        >License</a
+                    >
+                </div>
+                <div
+                    class="font-mono text-xs uppercase tracking-widest text-on-surface-variant opacity-50"
+                >
+                    © 2024 CRAWLBOY. KINETIC TERMINAL CORE.
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
