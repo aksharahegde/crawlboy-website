@@ -706,7 +706,7 @@
     </section>
 
     <!-- ============================================================ LIVE DEMO ============================================================ -->
-    <section id="demo" class="py-20 px-6 bg-inverse-surface dark:bg-[#111]">
+    <section id="demo" class="py-20 px-6 bg-inverse-surface dark:bg-[#111] overflow-x-hidden">
       <div class="max-w-6xl mx-auto">
         <div class="mono-label mb-2 text-center" style="color: #47e35e;">Interactive Mode</div>
         <p class="text-center text-gray-300 text-sm mb-3 max-w-2xl mx-auto leading-relaxed px-4">
@@ -717,7 +717,7 @@
         <div class="grid lg:grid-cols-3 gap-10 items-start">
 
           <!-- Terminal — 2/3 -->
-          <div class="lg:col-span-2 reveal">
+          <div class="lg:col-span-2 reveal min-w-0">
             <div class="terminal-window">
               <div class="terminal-header">
                 <div class="terminal-dot"></div>
@@ -728,7 +728,7 @@
               <div class="terminal-body terminal-pre" style="font-size: 0.78rem;">
 <span class="term-green">$ crawlboy -i</span>
 
-<span style="color:#00ff41; font-weight:600;">
+<span style="color:#00ff41; font-weight:600; display:block; font-size: clamp(0.35rem, 1.8vw, 0.78rem); line-height: 1.2;">
  ██████╗██████╗  █████╗ ██╗    ██╗██╗     ██████╗  ██████╗ ██╗   ██╗
 ██╔════╝██╔══██╗██╔══██╗██║    ██║██║     ██╔══██╗██╔═══██╗╚██╗ ██╔╝
 ██║     ██████╔╝███████║██║ █╗ ██║██║     ██████╔╝██║   ██║ ╚████╔╝
@@ -738,7 +738,7 @@
 
 <p class="sr-only">ASCII art banner spelling Crawlboy, followed by an example interactive wizard that asks for a sitemap URL, output directory, and optional flags.</p>
 
-<span class="term-dim">────────────────────────────────────────────────</span>
+<span class="term-dim" style="display:block; border-top: 1px solid rgba(255,255,255,0.12); margin: 0.25rem 0;"></span>
 
 <span class="term-blue">?</span> <span class="term-white">How would you like to specify the site?</span>
   <span class="term-green">❯ Provide a sitemap URL directly</span>
@@ -753,7 +753,7 @@
   <span class="term-gray">◯</span> Download images (--download-images)
   <span class="term-gray">◯</span> Stop on first error (--fail-fast)
 
-<span class="term-dim">────────────────────────────────────────────────</span>
+<span class="term-dim" style="display:block; border-top: 1px solid rgba(255,255,255,0.12); margin: 0.25rem 0;"></span>
 <span class="term-yellow">Starting crawl of https://example.com/sitemap.xml</span>
 <span class="term-green">✓</span> <span class="term-white">42 URLs found</span>
               </div>
@@ -1080,6 +1080,97 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <!-- ============================================================ VERIFIED WORKING ============================================================ -->
+    <section id="verified" class="py-20 px-6 bg-inverse-surface dark:bg-[#111]">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+          <!-- Left: title + stats -->
+          <div class="lg:col-span-5">
+            <div class="mono-label mb-3 reveal" style="color: var(--md-sys-color-inverse-primary);">
+              <span class="green-accent"></span>
+              Battle-tested
+            </div>
+            <h2 class="font-grotesk font-bold text-4xl tracking-tighter text-white mb-4 reveal reveal-delay-1">
+              Verified on real sites
+            </h2>
+            <p class="text-gray-400 leading-relaxed mb-8 reveal reveal-delay-2">
+              Not just a demo—Crawlboy has been tested against production websites. Here's an actual run against a live site, redirects and all.
+            </p>
+
+            <!-- Stats grid -->
+            <div class="grid grid-cols-2 gap-4 reveal reveal-delay-3">
+              <div class="rounded-xl p-4" style="background: rgba(0,255,65,0.06);">
+                <div class="font-grotesk font-bold text-3xl text-primary-container mb-1">5/5</div>
+                <div class="font-mono text-xs text-gray-400 tracking-wide uppercase">Pages crawled</div>
+              </div>
+              <div class="rounded-xl p-4" style="background: rgba(0,255,65,0.06);">
+                <div class="font-grotesk font-bold text-3xl text-primary-container mb-1">0</div>
+                <div class="font-mono text-xs text-gray-400 tracking-wide uppercase">Failures</div>
+              </div>
+              <div class="rounded-xl p-4" style="background: rgba(0,255,65,0.06);">
+                <div class="font-grotesk font-bold text-3xl text-primary-container mb-1">~13s</div>
+                <div class="font-mono text-xs text-gray-400 tracking-wide uppercase">Total time</div>
+              </div>
+              <div class="rounded-xl p-4" style="background: rgba(0,255,65,0.06);">
+                <div class="font-grotesk font-bold text-3xl text-primary-container mb-1">12.7 KB</div>
+                <div class="font-mono text-xs text-gray-400 tracking-wide uppercase">Output size</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: terminal showing the run -->
+          <div class="lg:col-span-7 reveal reveal-delay-2">
+            <div class="terminal-window shadow-2xl">
+              <div class="terminal-header">
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <span class="terminal-label">verified run — zsh</span>
+              </div>
+              <div class="terminal-body">
+                <div class="mb-4">
+                  <span class="term-green">$</span> <span class="term-white">crawlboy --site-url 'https://aksharahegde.xyz' --out-dir ./test-output --max-urls 5</span>
+                </div>
+                <div class="mb-3" style="color: #888;">
+                  <span class="term-gray">Discovering sitemap from </span><span class="term-blue">robots.txt</span><span class="term-gray"> ...</span><br>
+                  <span class="term-green">&#10003;</span> <span class="term-white">Found sitemap at robots.txt</span><br>
+                  <span class="term-green">&#10003;</span> <span class="term-white">Redirect handled:</span> <span class="term-gray">aksharahegde.xyz → www.aksharahegde.xyz</span>
+                </div>
+                <div class="mb-3" style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem;">
+                  <span class="term-gray">Crawling 5 URLs ...</span><br>
+                  <span class="term-green">&#10003;</span> <span class="term-blue">/</span> <span class="term-gray">→</span> <span class="term-white">index.md</span> <span class="term-gray" style="opacity:0.5;">3.1 KB</span><br>
+                  <span class="term-green">&#10003;</span> <span class="term-blue">/blog</span> <span class="term-gray">→</span> <span class="term-white">blog.md</span> <span class="term-gray" style="opacity:0.5;">3.2 KB</span><br>
+                  <span class="term-green">&#10003;</span> <span class="term-blue">/projects</span> <span class="term-gray">→</span> <span class="term-white">projects.md</span> <span class="term-gray" style="opacity:0.5;">5.3 KB</span><br>
+                  <span class="term-green">&#10003;</span> <span class="term-blue">/resources</span> <span class="term-gray">→</span> <span class="term-white">resources.md</span> <span class="term-gray" style="opacity:0.5;">628 B</span><br>
+                  <span class="term-green">&#10003;</span> <span class="term-blue">/shop</span> <span class="term-gray">→</span> <span class="term-white">shop.md</span> <span class="term-gray" style="opacity:0.5;">564 B</span>
+                </div>
+                <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem;">
+                  <span class="term-green">Done.</span> <span class="term-white">5 pages</span> <span class="term-gray">crawled in</span> <span class="term-yellow">~13s</span> <span class="term-gray">·</span> <span class="term-green">0 failures</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Output tree mini-preview -->
+            <div class="mt-4 rounded-xl p-4" style="background: rgba(0,255,65,0.04);">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="material-symbols-outlined text-primary-container" style="font-size: 1rem;">folder</span>
+                <span class="font-mono text-xs text-gray-400">test-output/md/</span>
+              </div>
+              <div class="font-mono text-xs text-gray-500 leading-loose pl-5" style="border-left: 1px solid rgba(0,255,65,0.15);">
+                <span class="text-primary-container">index.md</span> <span class="text-gray-600">— homepage content</span><br>
+                <span class="text-primary-container">blog.md</span> <span class="text-gray-600">— blog page</span><br>
+                <span class="text-primary-container">projects.md</span> <span class="text-gray-600">— projects page</span><br>
+                <span class="text-primary-container">resources.md</span> <span class="text-gray-600">— resources page</span><br>
+                <span class="text-primary-container">shop.md</span> <span class="text-gray-600">— shop page</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
