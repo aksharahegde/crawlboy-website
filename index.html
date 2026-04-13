@@ -314,7 +314,7 @@
         font-size: 0.875em;
       }
 
-      /* Table alternating rows */
+      /* Table alternating rows — desktop only */
       .cli-table tr:nth-child(even) {
         background-color: #f6f3f2;
       }
@@ -326,6 +326,22 @@
       }
       .dark .cli-table tr:hover {
         background-color: rgba(0, 255, 65, 0.08);
+      }
+
+      /* CLI cards — mobile only */
+      .cli-card {
+        padding: 1rem 1.25rem;
+        border-radius: 0.75rem;
+        background: var(--md-sys-color-surface-container-low);
+      }
+      .dark .cli-card {
+        background: #282828;
+      }
+      .cli-card:hover {
+        background: rgba(0, 255, 65, 0.06);
+      }
+      .dark .cli-card:hover {
+        background: rgba(0, 255, 65, 0.08);
       }
 
       /* Smooth scroll */
@@ -1008,7 +1024,8 @@
         Every crawl requires an output directory (<code class="text-xs">--out-dir</code>) and either a direct sitemap (<code class="text-xs">--sitemap-url</code>) or a site root for discovery (<code class="text-xs">--site-url</code>).
       </p>
 
-      <div class="reveal reveal-delay-2 overflow-x-auto rounded-xl" style="box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+      <!-- Desktop table -->
+      <div class="reveal reveal-delay-2 hidden md:block overflow-x-auto rounded-xl" style="box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
         <table class="cli-table w-full" style="border-collapse: collapse;">
           <thead>
             <tr class="bg-inverse-surface dark:bg-[#111]">
@@ -1080,6 +1097,85 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- Mobile cards -->
+      <div class="reveal reveal-delay-2 md:hidden space-y-3">
+        <div class="cli-card">
+          <code class="text-xs text-primary dark:text-inverse-primary font-mono">--sitemap-url</code>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Direct sitemap URL to crawl</p>
+        </div>
+        <div class="cli-card">
+          <code class="text-xs text-primary dark:text-inverse-primary font-mono">--site-url</code>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Site root URL — sitemap is auto-discovered from robots.txt or common paths</p>
+        </div>
+        <div class="cli-card">
+          <code class="text-xs text-primary dark:text-inverse-primary font-mono">--out-dir</code>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Directory to write output files into</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">--delay</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">0</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Seconds to wait between each page crawl</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">--page-timeout-ms</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">60000</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Navigation timeout in milliseconds per page</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">--max-urls</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">unlimited</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Cap the number of URLs to crawl</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">--save-html</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">off</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Write raw HTML files under <code class="text-xs">html/</code> in addition to Markdown</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">--download-images</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">off</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Save images to <code class="text-xs">media/</code>, content-addressed and deduplicated</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">--no-headless</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">off</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Show the browser window while crawling (disables headless mode)</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">--fail-fast</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">off</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Stop the entire crawl on the first page error</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">--include-offsite-urls</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">off</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Allow crawling URLs on hosts outside the origin site</p>
+        </div>
+        <div class="cli-card">
+          <div class="flex items-center justify-between">
+            <code class="text-xs text-primary dark:text-inverse-primary font-mono">-i, --interactive</code>
+            <code class="text-xs text-on-surface-variant dark:text-gray-500 font-mono">off</code>
+          </div>
+          <p class="text-sm text-on-surface-variant dark:text-gray-400 mt-1.5">Launch the guided wizard instead of using flags</p>
+        </div>
       </div>
     </section>
 
