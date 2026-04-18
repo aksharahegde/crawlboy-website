@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aksharahegde.github.io/crawlboy-landing-page/sitemap.xml
+Sitemap: https://crawlboy.aksharahegde.xyz/sitemap.xml
