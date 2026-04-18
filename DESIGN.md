@@ -3,7 +3,7 @@
 ## 1. Overview & Creative North Star
 The Creative North Star for this design system is **"The Kinetic Terminal."** 
 
-Unlike traditional CLI websites that merely mimic a black box, this system treats the web browser as a high-end, editorial canvas where the precision of code meets the breathability of modern minimalism. We are moving away from "retro-tech" and toward "advanced-utility." The layout intentionally breaks the rigid 12-column grid, using extreme whitespace and asymmetrical content blocks to guide the eye. By leveraging high-contrast monochrome and a singular, piercing accent color, we create an environment that feels both authoritative and lightweight—mirroring the speed and efficiency of the underlying Python tool.
+Unlike traditional CLI websites that merely mimic a black box, this system treats the web browser as a high-end, editorial canvas where the precision of code meets the breathability of modern minimalism. We are moving away from "retro-tech" and toward "advanced-utility." The layout intentionally breaks the rigid 12-column grid, using extreme whitespace and asymmetrical content blocks to guide the eye. By leveraging high-contrast monochrome and a singular, piercing accent color, we create an environment that feels both authoritative and lightweight-mirroring the speed and efficiency of the underlying Python tool.
 
 ---
 
@@ -14,7 +14,7 @@ The palette is built on a high-contrast foundation, using tonal shifts rather th
 **Explicit Instruction:** You are prohibited from using 1px solid borders for sectioning or containment. Boundaries must be defined solely through background color shifts. For example, a `surface-container-low` section should sit directly against a `surface` background. If you feel a border is needed, you have failed the layout’s intentionality. Use whitespace or a tonal shift instead.
 
 ### Surface Hierarchy & Nesting
-Treat the UI as a series of physical layers—like stacked sheets of fine paper. 
+Treat the UI as a series of physical layers-like stacked sheets of fine paper. 
 - **Base Layer:** `surface` (#fcf9f8)
 - **Primary Content Wells:** `surface-container-low` (#f6f3f2)
 - **Nested Utilities (Terminal Windows):** `surface-container-highest` (#e5e2e1)
@@ -86,7 +86,7 @@ The centerpiece of the system.
 
 ### Do:
 - **Embrace Asymmetry:** Let text blocks sit off-center to create a modern, editorial feel.
-- **Use "Terminal Green" Sparingly:** It should feel like a laser—cutting through the monochrome to point at the most important action.
+- **Use "Terminal Green" Sparingly:** It should feel like a laser-cutting through the monochrome to point at the most important action.
 - **Maximize Whitespace:** If a section feels crowded, double the padding. This system relies on "breathing room" to feel premium.
 
 ### Don't:
