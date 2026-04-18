@@ -3,26 +3,30 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Crawlboy — Sitemap to Markdown CLI (Crawl4AI)</title>
+    <title>Crawlboy — Sitemap to Markdown CLI (Python, Crawl4AI)</title>
     <script>
       if (localStorage.getItem('theme') === 'dark' ||
           (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.replace('light', 'dark');
       }
     </script>
-    <meta name="description" content="Crawlboy is a Python CLI that crawls sitemap URLs with Crawl4AI and writes one Markdown file per page (plus optional HTML, images, and errors.jsonl). pip install crawlboy." />
+    <meta name="description" content="Crawlboy is a Python CLI that crawls sitemap URLs with Crawl4AI and writes one Markdown file per URL—plus optional HTML, images, and errors.jsonl. Free on PyPI: pip install crawlboy." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#006e16" />
     <link rel="canonical" href="https://crawlboy.aksharahegde.xyz/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://crawlboy.aksharahegde.xyz/" />
-    <meta property="og:title" content="Crawlboy — Sitemap to Markdown CLI (Crawl4AI)" />
-    <meta property="og:description" content="Crawlboy is a Python CLI that crawls sitemap URLs with Crawl4AI and writes one Markdown file per page (plus optional HTML, images, and errors.jsonl). pip install crawlboy." />
+    <meta property="og:site_name" content="Crawlboy" />
+    <meta property="og:title" content="Crawlboy — Sitemap to Markdown CLI (Python, Crawl4AI)" />
+    <meta property="og:description" content="Crawlboy is a Python CLI that crawls sitemap URLs with Crawl4AI and writes one Markdown file per URL—plus optional HTML, images, and errors.jsonl. Free on PyPI: pip install crawlboy." />
     <meta property="og:image" content="https://crawlboy.aksharahegde.xyz/og.png" />
+    <meta property="og:image:alt" content="Crawlboy — terminal-style branding for the sitemap-to-Markdown CLI" />
     <meta property="og:image:width" content="1536" />
     <meta property="og:image:height" content="1024" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Crawlboy — Sitemap to Markdown CLI (Crawl4AI)" />
-    <meta name="twitter:description" content="Crawlboy is a Python CLI that crawls sitemap URLs with Crawl4AI and writes one Markdown file per page (plus optional HTML, images, and errors.jsonl). pip install crawlboy." />
+    <meta name="twitter:title" content="Crawlboy — Sitemap to Markdown CLI (Python, Crawl4AI)" />
+    <meta name="twitter:description" content="Crawlboy is a Python CLI that crawls sitemap URLs with Crawl4AI and writes one Markdown file per URL—plus optional HTML, images, and errors.jsonl. Free on PyPI: pip install crawlboy." />
     <meta name="twitter:image" content="https://crawlboy.aksharahegde.xyz/og.png" />
     <link rel="icon" href="logo.png" type="image/png" />
     <link rel="apple-touch-icon" href="logo.png" />
@@ -35,9 +39,20 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://crawlboy.aksharahegde.xyz/#website",
+        "name": "Crawlboy",
+        "url": "https://crawlboy.aksharahegde.xyz/"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Crawlboy",
         "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Command Line Tool",
+        "keywords": "sitemap, markdown, crawl4ai, python cli, web scraping, crawler",
         "operatingSystem": "Linux, macOS, Windows",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "downloadUrl": "https://pypi.org/project/crawlboy/",
